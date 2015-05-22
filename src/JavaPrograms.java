@@ -10,6 +10,7 @@ public class JavaPrograms {
 		   int[] a={1,2,3,2,1};
            System.out.println("middle index is "+findindex(a));
            System.out.println(reversestring("noob"));
+           System.out.println(reversenumber(50457800));
 	}
 	public static int findindex(int[] input)
 	{
@@ -55,6 +56,26 @@ public class JavaPrograms {
 			return reverse;
 		}
 		
+	}
+	public static int reversenumber(int n)
+	{
+		
+		String number=Integer.toString(n);
+		int len=number.length();
+		int[] reverse=new int[len];
+		int result=0;
+		for(int i=0;i<len;i++)
+		{
+			reverse[i]=n%10;
+			n=n/10;
+		}
+		
+		for(int i=0;i<len;i++)
+		{
+			result=(int) (result+reverse[i]*Math.pow(10,len-i-1));
+			
+		}
+		return result;
 	}
 	
 
